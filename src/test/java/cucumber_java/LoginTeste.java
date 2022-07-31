@@ -12,9 +12,10 @@ import configurations.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.pt.Dado;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.cucumber.java.pt.Então;
-import io.cucumber.java.pt.Quando;
 import junit.framework.Assert;
 import pages.LoginPage;
 
@@ -54,7 +55,7 @@ public class LoginTeste {
 		
 	}
 	
-	@Dado("que desejo fazer login no admim")
+	@Given("que desejo fazer login no admim")
 	public void que_desejo_fazer_login_no_admim() {
 		
 		DriverFactory.getDriver();
@@ -63,12 +64,12 @@ public class LoginTeste {
 
 	}
 
-	@Quando("Adiciono o usuario {string}")
+	@When("Adiciono o usuario {string}")
 	public void adiciono_o_usuario(String string) {
 		page.setUserName(string);
 	}
 
-	@Quando("eu adiciono a senha {string}")
+	@When("eu adiciono a senha {string}")
 	public void eu_adiciono_a_senha(String string) {
 		page.setSenha(string);
 		page.clicaBotao();
@@ -76,7 +77,7 @@ public class LoginTeste {
 		
 	}
 	
-	@Então("eu devo acessar a tela de pedidos")
+	@Then("eu devo acessar a tela de pedidos")
 	public void euDevoAcessarATelaDePedidos() {
 		waitPage(5000);
 		page.clicaSair2();
@@ -84,13 +85,13 @@ public class LoginTeste {
 	}
 
 
-	@Então("devo receber a mensagem de erro na abaixo do campo e-mail {string}")
+	@Then("devo receber a mensagem de erro na abaixo do campo e-mail {string}")
 	public void devoReceberAMensagemDeErroNaAbaixoDoCampoEMail(String msgErro) {
 		Assert.assertEquals(msgErro,"Insira um endereço de email válido" );
 
 	}
 
-	@Então("devo receber uma mensagem de erro")
+	@Then("devo receber uma mensagem de erro")
 	public void devoReceberUmaMensagemDeErro() {
 	 
 	}
