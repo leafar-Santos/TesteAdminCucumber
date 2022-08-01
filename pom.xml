@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.santos.cucumber.java</groupId>
+	<groupId>br.com.cucumber.java</groupId>
 	<artifactId>cucumber_java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -37,46 +37,11 @@
 
 	</dependencies>
 
-	<build>
-<plugins>
-
-     <plugin>
-            <groupId>net.masterthought</groupId>
-            <artifactId>maven-cucumber-reporting</artifactId>
-            <version>${maven-cucumber-reporting.version}</version>
-            <executions>
-                <execution>
-                    <id>generate-cucumber-reports</id>
-                    <phase>test</phase>
-                    <goals>
-                        <goal>generate</goal>
-                    </goals>
-                    <configuration>
-                        <jsonFiles>
-                            <param>**/*.json</param>
-                        </jsonFiles>
-                        <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                        <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
-                        <checkBuildResult>false</checkBuildResult>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-        </plugins>
-</build>
-
-
-
-
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-<jsonFiles>
-  <param>**/*.json</param>
-</jsonFiles>
 
 	</properties>
-
 
 
 </project>
